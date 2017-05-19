@@ -13,6 +13,8 @@ export default class Game extends React.Component {
             feedback: 'Make your guess!',
             correctAnswer: Math.round(Math.random() * 100)
         };
+
+
     }
 
     newGame() {
@@ -69,4 +71,3 @@ export default class Game extends React.Component {
         );
     }
 }
-

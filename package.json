@@ -5,6 +5,8 @@
   "proxy": "http://localhost:8080/",
   "devDependencies": {
     "enzyme": "^2.8.2",
+    "expect-enzyme": "^0.15.0",
+    "jest-enzyme": "^3.1.1",
     "react-scripts": "0.9.0",
     "react-test-renderer": "^15.5.4"
   },
