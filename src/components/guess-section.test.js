@@ -10,13 +10,6 @@ describe('<GuessSection/> in-depth rendering testing', () => {
         const wrapper = mount(<GuessForm onGuess={callback}/>);
         const val = 99999;
         wrapper.find('input[type="text"]').node.value = val;
-
-        console.log(wrapper.find('#userGuess').node.value)
-        console.log("\t\t!!!!!!!!!")
-        console.log(callback)
-        console.log("\t\t!!!!!!!!!")
-
-
         wrapper.simulate('submit');
         expect(callback).toHaveBeenCalledWith(val.toString());
     })
