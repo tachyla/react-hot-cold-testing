@@ -22,7 +22,7 @@ describe('<Game/> method testing', () => {
         const wrapper = mount(<Game newGame={callback}/>);
         const originalAnswer = wrapper.instance().state.correctAnswer;
         callback(5);
-        const newAnswer = setTimeout(()=>wrapper.instance().state.correctAnswer,1) 
+        const newAnswer = setTimeout(()=>wrapper.instance().state.correctAnswer,1)
         console.log(originalAnswer);
         console.log(newAnswer);
         expect(newAnswer).toNotEqual(originalAnswer);
@@ -37,7 +37,14 @@ describe('<Game/> method testing', () => {
         wrapper.instance().guess('a');
         expect(wrapper.state('feedback')).toEqual('Please enter a valid number');
     })
+
+    it('Check the number of guesses',()=>{
+      const callback = jest.fn();
+      const wrapper = mount(<Game newGame={callback}/>);
+      wrapper.setState({'guesses': []});
+      wrapper.instance().guess(5);
+      wrapper.instance().guess(5);
+      wrapper.instance().guess(5);
+      expect(wrapper.find('#count').text()).toEqual(3);
+    })
 })
-
-
-
